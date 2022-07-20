@@ -9,7 +9,7 @@
  * };
  */
 
-// In this code 1 there is problem of Time Limit Exceed
+
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
