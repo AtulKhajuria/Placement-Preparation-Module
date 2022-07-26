@@ -15,8 +15,8 @@ public:
             right[j--]=maxRight;
         }
         for(int i=0;i<n;i++){
-            int val=max(0,(min(left[i],right[i])-height[i]));
-            ans+=val;
+            ans+=min(left[i],right[i])-height[i];
+            
         }
         return ans;
     }
