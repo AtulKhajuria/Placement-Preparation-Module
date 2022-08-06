@@ -11,16 +11,16 @@
  */
 class Solution {
 public:
-    bool ans=true;
     int checkBalance(TreeNode* root){
         if(root==NULL)return 0;
-        int lb=1+checkBalance(root->left);
-        int rb=1+checkBalance(root->right);
-        if(abs(lb-rb)>1)ans=false;
-        return max(lb,rb);
+        int lh=checkBalance(root->left);
+        if(lh==-1)return -1;
+        int rh=checkBalance(root->right);
+        if(rh==-1)return -1;
+        if(abs(lh-rh)>1)return -1;
+        return max(lh,rh)+1;
     }
     bool isBalanced(TreeNode* root) {
-        int val=checkBalance(root);
-        return ans;
+        return checkBalance(root)!=-1;
     }
 };
